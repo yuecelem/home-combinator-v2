@@ -32,9 +32,10 @@ export default class ItemManager {
     }
 
     removeFromItemList(itemId: number) {
-        const itemIndex = this.itemList.findIndex((item) => {
-            item.id === itemId;
-        });
-        this.itemList.splice(itemIndex, 1);
+        const itemIndex = this.itemList.findIndex((item) => item.id === itemId);
+        console.log(itemIndex);
+        if (itemIndex !== -1) {
+            this.itemList.splice(itemIndex, 1);
+        } else return;
     }
 }
