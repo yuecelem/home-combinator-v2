@@ -30,4 +30,11 @@ export default class ItemManager {
         this.itemList.push(newItem);
         this.idCount += 1;
     }
+
+    removeFromItemList(itemId: number) {
+        const itemIndex = this.itemList.findIndex((item) => {
+            item.id === itemId;
+        });
+        this.itemList.splice(itemIndex, 1);
+    }
 }
